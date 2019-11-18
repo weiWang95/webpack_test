@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title = current_inn.name
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    link rel='shortcut icon' type='image/x-icon' href='/favicon.ico'
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'
+  body class=body_class
+    == render 'shared/navbar'
+
+    / Sidebar
+    == render 'admins/shared/sidebar'
+
+    / Page Content
+    .admin-body-container
+      .admin-alert-container
+        == render 'admins/shared/flash_notice'
+      .breadcrumb-container
+        == yield :setup_admin_breadcrumb
+        == render 'admins/shared/breadcrumb'
+      .content
+        == yield
+
+    / Global Model Container
+    .admin-modal-container

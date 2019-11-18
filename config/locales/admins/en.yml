@@ -1,0 +1,13 @@
+zh-CN:
+  admin:
+    menu:
+      dashboard: dashboard
+      room_manage: Room Manage
+      inn_info: Inn Info
+    table:
+      operate: Operate
+    room:
+      table:
+        number: Number
+        state: State
+        released_at: Release Time

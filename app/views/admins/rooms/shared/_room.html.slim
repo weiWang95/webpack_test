@@ -1,0 +1,19 @@
+table.table.table-hover.room-list-table
+  thead.thead-light
+    tr
+      th width="25%" = t('admin.room.table.number')
+      th width="25%" = t('admin.room.table.state')
+      th width="25%" = t('admin.room.table.released_at')
+      th width="25%" = t('admin.table.operate')
+  tbody
+    - if rooms.present?
+      - rooms.each do |room|
+        tr class="room-item-#{room.id}"
+          td = room.number
+          td = room.state
+          td = room.released_at
+          td
+    - else
+      == render 'admins/shared/no_data_for_table'
+
+== render partial: 'admins/shared/paginate', locals: { objects: rooms }

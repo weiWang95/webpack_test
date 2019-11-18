@@ -1,0 +1,33 @@
+- flash.each do |k, v|
+  - next unless %w(success danger warning info).include?(k.to_s)
+  .alert.alert-dismissible.fade.show.alert-= k role="alert"
+    = v
+  button.close type="button" data-dismiss="alert" aria-label="Close"
+    span aria-hidden="true" = "&times;"
+- flash.now.as_json.each do |k, v|
+  - next unless %w(success danger warning info).include?(k.to_s)
+  .alert.alert-dismissible.fade.show.alert-= k role="alert"
+  = v
+  button.close type="button" data-dismiss="alert" aria-label="Close"
+    span aria-hidden="true" = "&times;"
+
+/ <% flash.each do |k, v| %>
+/   <% next unless %w(success danger warning info).include?(k.to_s) %>
+/
+/   <div class="alert alert-<%= k %> alert-dismissible fade show" role="alert">
+/     <%= v %>
+/     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+/       <span aria-hidden="true">&times;</span>
+/     </button>
+/   </div>
+/ <% end %>
+/ <% flash.now.as_json.each do |k, v| %>
+/   <% next unless %w(success danger warning info).include?(k.to_s) %>
+/
+/   <div class="alert alert-<%= k %> alert-dismissible fade show" role="alert">
+/     <%= v %>
+/     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+/       <span aria-hidden="true">&times;</span>
+/     </button>
+/   </div>
+/ <% end %>

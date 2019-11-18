@@ -1,0 +1,22 @@
+- if @_admin_breadcrumbs.present?
+  nav aria-label="breadcrumb"
+   ul.breadcrumb
+     - @_admin_breadcrumbs&.each_with_index do |item, index|
+       - if item.url.present? && index != @_admin_breadcrumbs.size - 1
+         li.breadcrumb-item = link_to item.text, item.url
+       - else
+         li.breadcrumb-item.active aria-current="page" = item.text
+
+/ <% if @_admin_breadcrumbs.present? %>
+/   <nav aria-label="breadcrumb">
+/     <ol class="breadcrumb">
+/       <% @_admin_breadcrumbs&.each_with_index do |item, index| %>
+/         <% if item.url.present? && index != @_admin_breadcrumbs.size - 1 %>
+/           <li class="breadcrumb-item"><%= link_to item.text, item.url %></li>
+/         <% else %>
+/           <li class="breadcrumb-item active" aria-current="page"><%= item.text %></li>
+/         <% end %>
+/       <% end %>
+/     </ol>
+/   </nav>
+/ <% end %>

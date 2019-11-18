@@ -1,0 +1,6 @@
+- define_admin_breadcrumbs do
+  - add_admin_breadcrumb(t('admin.menu.room_manage'), admins_rooms_path)
+  - add_admin_breadcrumb(t('admin.menu.new_room'))
+
+.box.new-room-form-container
+  == render 'admins/rooms/shared/form', room: @room

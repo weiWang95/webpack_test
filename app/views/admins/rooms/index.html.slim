@@ -1,0 +1,10 @@
+- define_admin_breadcrumbs do
+  - add_admin_breadcrumb(t('admin.menu.room_manage'))
+
+.box.search-form-container
+  .search-form
+  .operation
+    = link_to(t('admin.menu.new_room'), new_admins_room_path, class: 'btn btn-primary')
+
+.box.room-list-container
+  == render partial: 'admins/rooms/shared/room', locals: { rooms: @rooms }

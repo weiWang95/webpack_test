@@ -1,0 +1,20 @@
+zh-CN:
+  admin:
+    menu:
+      dashboard: 概览
+      room_manage: 房间管理
+      new_room: 添加房间
+      inn_info: 客栈信息
+    table:
+      operate: 操作
+    form:
+      save: 保存
+      cancel: 取消
+      back: 返回
+    room:
+      table:
+        number: 房间号
+        state: 状态
+        released_at: 到期时间
+      form:
+        number: 房间号

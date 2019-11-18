@@ -1,0 +1,6 @@
+= simple_form_for([:admins, room], defaults: { wrapper_html: { class: 'col-12 col-md-6' }}) do |f|
+  = f.input :number, label: t('admin.room.form.number')
+
+  .form-group.col-12.col-md-6
+    = f.button :submit, value: t('admin.form.save'), class: 'btn-primary px-4'
+    = link_to t('admin.form.cancel'), admins_rooms_path, class: 'btn btn-secondary ml-3 px-4'

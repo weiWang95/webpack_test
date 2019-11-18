@@ -1,0 +1,4 @@
+.paginate-container
+  - if objects && objects.size.nonzero?
+    .paginate-total = page_entries_info objects
+  == paginate objects, views_prefix: 'admins', remote: true

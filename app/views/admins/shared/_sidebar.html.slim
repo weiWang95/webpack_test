@@ -1,0 +1,14 @@
+- sidebar_collapse = request.cookies['admin_sidebar_collapse'].to_s == 'true'
+nav#sidebar class="#{sidebar_collapse ? 'active' : ''}" data-current-controller=admin_sidebar_controller
+  .sidebar-header
+    a.sidebar-header-logo href="/" class="" data-toggle="tooltip" title="返回主站"
+      = image_pack_tag('logo.jpg')
+    #sidebarCollapse.navbar-btn class="#{sidebar_collapse ? 'active' : ''}"
+      i.fa.fa-chevron-left.fold data-toggle="tooltip" data-placement="right" data-boundary="window" title="收起"
+      i.fa.fa-bars.unfold data-toggle="tooltip" data-placement="right" data-boundary="window" title="展开"
+
+  / Sidebar Links
+  ul.list-unstyled.components
+    li == sidebar_item(admins_path, t('admin.menu.dashboard'), icon: 'tachometer-alt', controller: 'admins-dashboards')
+    li == sidebar_item(admins_rooms_path, t('admin.menu.room_manage'), icon: 'bed', controller: 'admins-rooms')
+    li == sidebar_item(admins_inn_path, t('admin.menu.inn_info'), icon: 'dumpster', controller: 'admins-inns')

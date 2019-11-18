@@ -1,0 +1,17 @@
+en:
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No data found"
+          one: "Displaying <b>1</b> data"
+          other: "Displaying <b>all %{count}</b> data"
+      more_pages:
+        display_entries: "Displaying data <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
